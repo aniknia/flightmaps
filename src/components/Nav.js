@@ -1,6 +1,7 @@
 import NavHead from './NavHead'
 import CodeInput from './CodeInput'
 import FlightList from './FlightList'
+import Credit from './Credit'
 
 export default function Nav() {
     return (
@@ -8,6 +9,7 @@ export default function Nav() {
            <NavHead />
            <CodeInput />
            <FlightList />
+           <Credit />
        </nav> 
     )
 }
