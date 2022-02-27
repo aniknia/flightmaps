@@ -5,7 +5,7 @@ export default function Credit() {
         <VStack>
             <Box>Credit to:</Box>
             <Box>Joel Lawson for the project</Box>
-            <Box>Alexander Liu for design</Box>
+            <Box>Alexander Liu for the design</Box>
         </VStack>
     )
 }
