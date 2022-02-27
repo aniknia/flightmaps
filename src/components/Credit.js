@@ -1,5 +1,7 @@
 import { Box, VStack } from "@chakra-ui/layout";
 
+// TODO: Maybe change this to Thanks instead of Credit
+
 export default function Credit() {
     return (
         <VStack>
