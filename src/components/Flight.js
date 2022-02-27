@@ -7,9 +7,9 @@ export default function Flight(props) {
     return (
         <Box maxW='sm' borderWidth='1px' borderRadius='lg' p={2}>
             <HStack>
-                <p>From</p>
+                <p>{props.start}</p>
                 <ArrowRightIcon size={size} />
-                <p>To</p>
+                <p>{props.end}</p>
             </HStack>
             <HStack>
                 <ClockIcon size={size} />

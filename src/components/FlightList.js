@@ -6,7 +6,7 @@ export default function CodeList(props) {
         <Box>
             <p>Click to remove flight.</p>
             <Wrap>
-                <Flight />
+                <Flight start='LAX' end='NRT' />
             </Wrap>
         </Box>
     )
