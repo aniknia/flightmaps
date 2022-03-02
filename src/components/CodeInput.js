@@ -1,5 +1,7 @@
-import { Box, HStack, PinInput, PinInputField } from '@chakra-ui/react'
-import { ArrowRightIcon } from '@primer/octicons-react'
+import { Box, Stack, HStack, Center, Button } from '@chakra-ui/react'
+import { ArrowRightIcon , PlusIcon} from '@primer/octicons-react'
+import InputField from './InputField';
+import React from 'react'
 
 // TODO: Decide how to take in information
 // Either <PinIn /> <Arrow /> <Pinin />
@@ -7,25 +9,31 @@ import { ArrowRightIcon } from '@primer/octicons-react'
 // <PinIn> <Arrow /> </Pinin>
 // The former is easier to parse but the latter is better ux
 
-export default function CodeInput(props) {
+// TODO: Make the input debounce, no submit should be necessary
+
+export default function CodeInput() {
+    const [ViableSubmit, SetViableSubmit] = React.setState(false);
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        console.log('Added Flight');
+    }
+
     return (
         <Box>
             <p>Enter your airport codes below.</p>
-            <Box maxW='sm' borderWidth='1px' borderRadius='lg' p={2} name='route'>
+            <Stack maxW='sm' borderWidth='1px' borderRadius='lg' p={2} name='route'>
                 <HStack>
-                    <PinInput type='alphanumeric' name='start'>
-                        <PinInputField />
-                        <PinInputField />
-                        <PinInputField />
-                        <PinInputField />
-                        <ArrowRightIcon size={24} />
-                        <PinInputField />
-                        <PinInputField />
-                        <PinInputField />
-                        <PinInputField />
-                    </PinInput>
+                    <InputField name='start' />
+                    <ArrowRightIcon size={24} />
+                    <InputField name='end'  />              
                 </HStack>
-            </Box>
+                <Center>
+                    <Button leftIcon={<PlusIcon size={16} />} variant='outline' onClick={handleSubmit}>
+                        Flight
+                    </Button>
+                </Center>
+            </Stack>
         </Box>
     )
 }
