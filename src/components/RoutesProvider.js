@@ -26,17 +26,19 @@ export default function RoutesProvider(props) {
     function removeRoute(route) {
         let existsFlag = false;
         let i = 0;
+        let val = 0;
         routes.forEach((item) => {
             if(item.start === route.start && item.end === route.end) {
                 existsFlag = true;
+                val = i;
                 return true;
             }
             i++;
         })
         if (existsFlag === true) {
-            console.log(i)
+            console.log(val)
             let temp = [...routes];
-            temp.splice(i, 1);
+            temp.splice(val, 1);
             if (temp.length === 0) {
                 setRoutes([]);
             }
