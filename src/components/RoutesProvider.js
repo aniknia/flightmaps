@@ -10,15 +10,39 @@ export default function RoutesProvider(props) {
     const [routes, setRoutes] = useState([]);
 
     function addRoute(route) {
-        if (routes.indexOf(route) === -1){
+        let existsFlag = false;
+        routes.forEach((item) => {
+            if(item.start === route.start && item.end === route.end) {
+                existsFlag = true;
+                return true;
+            }
+        })
+        if (existsFlag === false) {
             setRoutes([...routes, route]);
             console.log("route was added to provider")
         }
     }
 
     function removeRoute(route) {
-        if (routes.indexOf(route)) {
-            routes.splice(routes.indexOf(route));
+        let existsFlag = false;
+        let i = 0;
+        routes.forEach((item) => {
+            if(item.start === route.start && item.end === route.end) {
+                existsFlag = true;
+                return true;
+            }
+            i++;
+        })
+        if (existsFlag === true) {
+            console.log(i)
+            let temp = [...routes];
+            temp.splice(i, 1);
+            if (temp.length === 0) {
+                setRoutes([]);
+            }
+            else {
+                setRoutes(temp);
+            }
             console.log("route was removed from provider")
         }
     }
