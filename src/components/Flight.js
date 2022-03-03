@@ -4,6 +4,9 @@ import { ArrowRightIcon, ArrowUpRightIcon, ClockIcon } from "@primer/octicons-re
 
 let size = 16;
 
+// TODO: add animations to add and remove
+// TODO: add a click to remove feature
+
 export default function Flight(props) {
     return (
         <Box maxW='sm' borderWidth='1px' borderRadius='lg' p={2}>
