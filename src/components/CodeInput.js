@@ -2,7 +2,7 @@ import { Box, Stack, HStack, Center, Button, Text } from '@chakra-ui/react'
 import { ArrowRightIcon , PlusIcon} from '@primer/octicons-react'
 import { Routes } from './RoutesProvider'
 import { useState, useContext } from 'react'
-import InputField from './InputField';
+import InputField from './InputField'
 
 // TODO: Decide how to take in information
 // Either <PinIn /> <Arrow /> <Pinin />
@@ -22,7 +22,11 @@ export default function CodeInput(props) {
     function handleSubmit(event) {
         event.preventDefault();
         if (startFlag === true && endFlag === true) {
-            value.addRoute([start, end]);
+            let route = {
+                start: start,
+                end: end
+            };
+            value.addRoute(route);
         }
         else{
             console.log('nothing happened...');
