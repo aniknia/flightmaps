@@ -1,7 +1,8 @@
-import { Box, Stack, HStack, Center, Button } from '@chakra-ui/react'
+import { Box, Stack, HStack, Center, Button, Text } from '@chakra-ui/react'
 import { ArrowRightIcon , PlusIcon} from '@primer/octicons-react'
+import { Routes } from './RoutesProvider'
+import { useState, useContext } from 'react'
 import InputField from './InputField';
-import React from 'react'
 
 // TODO: Decide how to take in information
 // Either <PinIn /> <Arrow /> <Pinin />
@@ -11,22 +12,32 @@ import React from 'react'
 
 // TODO: Make the input debounce, no submit should be necessary
 
-export default function CodeInput() {
-    const [ViableSubmit, SetViableSubmit] = React.setState(false);
+export default function CodeInput(props) {
+    const [start, setStart] = useState('');
+    const [startFlag, setStartFlag] = useState(false);
+    const [end, setEnd] = useState('');
+    const [endFlag, setEndFlag] = useState(false);
+    const value = useContext(Routes);
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log('Added Flight');
+        if (startFlag === true && endFlag === true) {
+            value.addRoute([start, end]);
+        }
+        else{
+            console.log('nothing happened...');
+        }
     }
 
     return (
         <Box>
-            <p>Enter your airport codes below.</p>
+            <Text mb='2'>Enter your airport codes below.</Text>
+
             <Stack maxW='sm' borderWidth='1px' borderRadius='lg' p={2} name='route'>
                 <HStack>
-                    <InputField name='start' />
+                    <InputField routeValue={start} set={setStart} flag={setStartFlag} />
                     <ArrowRightIcon size={24} />
-                    <InputField name='end'  />              
+                    <InputField routeValue={end} set={setEnd} flag={setEndFlag} />              
                 </HStack>
                 <Center>
                     <Button leftIcon={<PlusIcon size={16} />} variant='outline' onClick={handleSubmit}>
