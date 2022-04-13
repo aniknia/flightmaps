@@ -1,5 +1,5 @@
 import { IoAirplane } from '@react-icons/all-files/io5/IoAirplane'
-import { Flex, Spacer, HStack, DrawerCloseButton } from '@chakra-ui/react'
+import { Flex, Spacer, HStack } from '@chakra-ui/react'
 import { ColorModeSwitcher } from '../ColorModeSwitcher'
 
 export default function NavHead(props) {

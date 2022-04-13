@@ -1,4 +1,4 @@
-import { Drawer, DrawerContent, DrawerHeader, DrawerBody, DrawerFooter, Button, Stack, Center, useDisclosure, DrawerOverlay, DrawerCloseButton } from '@chakra-ui/react'
+import { Drawer, DrawerContent, DrawerHeader, DrawerBody, DrawerFooter, Button, Stack, Center, useDisclosure, DrawerOverlay } from '@chakra-ui/react'
 import { useRef } from 'react'
 import NavHead from './NavHead'
 import CodeInput from './CodeInput'
