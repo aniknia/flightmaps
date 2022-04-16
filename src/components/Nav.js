@@ -6,6 +6,7 @@ import FlightList from './FlightList'
 import Credit from './Credit'
 
 // TODO: Fix DrawerFooter not centering with out Center being the outside tag
+// TOFO: Add exit drawer button
 
 export default function Nav() {
     const { isOpen, onOpen, onClose } = useDisclosure();
