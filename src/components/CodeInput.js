@@ -26,7 +26,10 @@ export default function CodeInput(psrops) {
                 start: start.toUpperCase(),
                 end: end.toUpperCase()
             };
+            setStart('');
+            setEnd('');
             value.addRoute(route);
+            console.log('your attack was successful!')
         }
         else{
             console.log('nothing happened...');
@@ -39,9 +42,9 @@ export default function CodeInput(psrops) {
 
             <Stack maxW='sm' borderWidth='1px' borderRadius='lg' p={2} name='route'>
                 <HStack>
-                    <InputField routeValue={start} set={setStart} flag={setStartFlag} />
+                    <InputField value={start} set={setStart} flag={setStartFlag} />
                     <ArrowRightIcon size={24} />
-                    <InputField routeValue={end} set={setEnd} flag={setEndFlag} />              
+                    <InputField value={end} set={setEnd} flag={setEndFlag} />              
                 </HStack>
                 <Center>
                     <Button leftIcon={<PlusIcon size={16} />} variant='outline' onClick={handleSubmit}>
