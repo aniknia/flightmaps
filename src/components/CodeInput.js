@@ -12,7 +12,7 @@ import InputField from './InputField'
 
 // TODO: Make the input debounce, no submit should be necessary
 
-export default function CodeInput(props) {
+export default function CodeInput(psrops) {
     const [start, setStart] = useState('');
     const [startFlag, setStartFlag] = useState(false);
     const [end, setEnd] = useState('');
@@ -23,8 +23,8 @@ export default function CodeInput(props) {
         event.preventDefault();
         if (startFlag === true && endFlag === true) {
             let route = {
-                start: start,
-                end: end
+                start: start.toUpperCase(),
+                end: end.toUpperCase()
             };
             value.addRoute(route);
         }
