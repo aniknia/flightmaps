@@ -20,7 +20,7 @@ export default function Nav() {
                 <DrawerOverlay />
                 <DrawerContent>
                     <DrawerHeader>
-                        <NavHead />
+                        <NavHead close={onClose} />
                     </DrawerHeader>
                     <DrawerBody>
                         <Stack spacing='24px'>
