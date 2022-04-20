@@ -1,8 +1,6 @@
 import { PinInputField, PinInput } from "@chakra-ui/pin-input"
 import { useState, useEffect } from 'react'
 
-// TODO: Extend PinInput theme so that when the airport does not exist a red highlight appears
-
 export default function InputField(props) {
     const [error, setError] = useState(false);
 
