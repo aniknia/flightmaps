@@ -12,7 +12,7 @@ import InputField from './InputField'
 
 // TODO: Make the input debounce, no submit should be necessary
 
-export default function CodeInput(props) {
+export default function CodeInput(psrops) {
     const [start, setStart] = useState('');
     const [startFlag, setStartFlag] = useState(false);
     const [end, setEnd] = useState('');
@@ -23,10 +23,13 @@ export default function CodeInput(props) {
         event.preventDefault();
         if (startFlag === true && endFlag === true) {
             let route = {
-                start: start,
-                end: end
+                start: start.toUpperCase(),
+                end: end.toUpperCase()
             };
+            setStart('');
+            setEnd('');
             value.addRoute(route);
+            console.log('your attack was successful!')
         }
         else{
             console.log('nothing happened...');
@@ -39,9 +42,9 @@ export default function CodeInput(props) {
 
             <Stack maxW='sm' borderWidth='1px' borderRadius='lg' p={2} name='route'>
                 <HStack>
-                    <InputField routeValue={start} set={setStart} flag={setStartFlag} />
+                    <InputField value={start} set={setStart} flag={setStartFlag} />
                     <ArrowRightIcon size={24} />
-                    <InputField routeValue={end} set={setEnd} flag={setEndFlag} />              
+                    <InputField value={end} set={setEnd} flag={setEndFlag} />              
                 </HStack>
                 <Center>
                     <Button leftIcon={<PlusIcon size={16} />} variant='outline' onClick={handleSubmit}>
