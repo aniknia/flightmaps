@@ -19,6 +19,8 @@ export default function CodeInput(psrops) {
     const [endFlag, setEndFlag] = useState(false);
     const value = useContext(Routes);
 
+    // TODO: api should only be hit once per input
+
     function handleSubmit(event) {
         event.preventDefault();
         if (startFlag === true && endFlag === true) {
