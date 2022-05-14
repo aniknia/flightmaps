@@ -73,8 +73,8 @@ export default function RoutesProvider(props) {
                     console.log("something went wrong");
                 } else {
                     setError(false);
-                    route.x = data["x_cords"];
-                    route.y = data["y_cords"]
+                    route.x = data["x"];
+                    route.y = data["y"]
                     console.log("coordinates were saved");
                 }
             })
