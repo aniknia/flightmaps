@@ -40,7 +40,7 @@ export default function CodeInput(psrops) {
 
     return (
         <Box>
-            <Text mb='2'>Enter your airport codes below.</Text>
+            <Text mb='2'>Enter your 3 or 4 letter airport codes below.</Text>
 
             <Stack maxW='sm' borderWidth='1px' borderRadius='lg' p={2} name='route'>
                 <HStack>
