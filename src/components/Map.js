@@ -4,6 +4,8 @@ import useWindowDimensions from './useWindowDimension';
 import { Routes } from './RoutesProvider';
 import LineChart from './LineChart';
 
+const test_data = [{route: '', x: 0, y: 0}, {route: '', x: 1000, y: 1000}];
+
 function makeChart(data, height, width) {
     return LineChart(data, {
         x: d => d.x,
@@ -20,7 +22,7 @@ function makeChart(data, height, width) {
 
 function cleanData(routes) {
     if (routes.length === 0) {
-        return [{route: '', x: 0, y: 0}]
+        return test_data
     } else {
         let data = new Array(routes.length * 1000);
         let i = 0;
@@ -33,7 +35,7 @@ function cleanData(routes) {
             }
             i++;
         })*/
-        return [{route: '', x: 0, y: 0}]
+        return test_data
     }
 }
 
