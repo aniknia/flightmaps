@@ -24,7 +24,7 @@ function cleanData(routes) {
     } else {
         let data = new Array(routes.length * 1000);
         let i = 0;
-        routes.forEach(item => {
+        /*routes.forEach(item => {
             for (let j = 0; j < 1000; j++) {
                 let route = String(item['start'] + " to " + item['end']);
                 let x = item['x'][j];
@@ -32,8 +32,7 @@ function cleanData(routes) {
                 data[(i * 1000) + j] = {route: route, x: x, y: y};
             }
             i++;
-        })
-        console.log(routes);
+        })*/
         return [{route: '', x: 0, y: 0}]
     }
 }
