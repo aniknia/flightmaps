@@ -43,7 +43,6 @@ export default function RoutesProvider(props) {
             i++;
         })
         if (existsFlag === true) {
-            console.log(val)
             let temp = [...routes];
             temp.splice(val, 1);
             if (temp.length === 0) {
