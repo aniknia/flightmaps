@@ -1,4 +1,5 @@
 import { Drawer, DrawerContent, DrawerHeader, DrawerBody, DrawerFooter, Button, Stack, Center, useDisclosure, DrawerOverlay } from '@chakra-ui/react'
+import { PlusIcon } from '@primer/octicons-react'
 import { useRef } from 'react'
 import ControlPanelHead from './ControlPanelHead'
 import CodeInput from './CodeInput'
@@ -10,8 +11,8 @@ export default function ControlPanel() {
     const btnRef = useRef()
     return (
         <>
-            <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
-                Open
+            <Button leftIcon={<PlusIcon size={16} />} ref={btnRef} colorScheme='teal' onClick={onOpen}>
+                Flight
             </Button>
             <Drawer isOpen={isOpen} onClose={onClose} finalFocusRef={btnRef} placement='left' size='sm'>
                 <DrawerOverlay />
