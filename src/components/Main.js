@@ -1,5 +1,5 @@
 import Map from './Map'
-import Nav from './Nav'
+import ControlPanel from './ControlPanel'
 import RoutesProvider from './RoutesProvider'
 
 // TODO: make favicon blue for visibility on light and dark mode browsers
@@ -9,7 +9,7 @@ export default function Main() {
         <div>
             <RoutesProvider>
                 <Map />
-                <Nav />
+                <ControlPanel />
             </RoutesProvider>
         </div>
     )

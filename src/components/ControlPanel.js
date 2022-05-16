@@ -1,11 +1,11 @@
 import { Drawer, DrawerContent, DrawerHeader, DrawerBody, DrawerFooter, Button, Stack, Center, useDisclosure, DrawerOverlay } from '@chakra-ui/react'
 import { useRef } from 'react'
-import NavHead from './NavHead'
+import ControlPanelHead from './ControlPanelHead'
 import CodeInput from './CodeInput'
 import FlightList from './FlightList'
 import Credit from './Credit'
 
-export default function Nav() {
+export default function ControlPanel() {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const btnRef = useRef()
     return (
@@ -17,7 +17,7 @@ export default function Nav() {
                 <DrawerOverlay />
                 <DrawerContent>
                     <DrawerHeader>
-                        <NavHead close={onClose} />
+                        <ControlPanelHead close={onClose} />
                     </DrawerHeader>
                     <DrawerBody>
                         <Stack spacing='24px'>

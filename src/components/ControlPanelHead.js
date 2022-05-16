@@ -2,7 +2,7 @@ import { IoAirplane } from '@react-icons/all-files/io5/IoAirplane'
 import { Flex, Spacer, HStack, CloseButton } from '@chakra-ui/react'
 import { ColorModeSwitcher } from '../ColorModeSwitcher'
 
-export default function NavHead(props) {
+export default function ControlPanelHead(props) {
     return (
         <Flex>
             <HStack>
