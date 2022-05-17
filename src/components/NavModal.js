@@ -28,7 +28,7 @@ export default function NavModal(props) {
                 </ModalBody>
     
                 <ModalFooter>
-                <Button variant='outline' colorScheme='teal' mr={3} onClick={onClose}>
+                <Button variant='outline' colorScheme='gray' mr={3} onClick={onClose}>
                     Close
                 </Button>
                 </ModalFooter>

@@ -13,7 +13,7 @@ export default function ControlPanel() {
     const btnRef = useRef()
     return (
         <>
-            <Button leftIcon={<PlusIcon size={16} />} ref={btnRef} variant='outline' colorScheme='teal' onClick={onOpen}>
+            <Button leftIcon={<PlusIcon size={16} />} ref={btnRef} variant='outline' colorScheme='gray' onClick={onOpen}>
                 Flight
             </Button>
             <Drawer isOpen={isOpen} onClose={onClose} finalFocusRef={btnRef} placement='left' size='sm'>
