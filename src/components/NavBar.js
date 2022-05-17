@@ -1,8 +1,9 @@
 import { Stack, Flex, Box, Spacer, Divider } from "@chakra-ui/react"
+import { QuestionIcon } from "@primer/octicons-react"
 import { ColorModeSwitcher } from '../ColorModeSwitcher'
 import ControlPanel from "./ControlPanel"
 import Logo from "./Logo"
-import NavPopover from "./NavPopover"
+import NavModal from "./NavModal"
 
 export default function NavBar() {
   return (
@@ -17,7 +18,7 @@ export default function NavBar() {
         </Box>
         <Spacer />
         <Box>
-          <NavPopover title="Info" head="" body= "Info Pane" />
+          <NavModal button={<QuestionIcon size={24} />} title="Info" body= "This is the info pane" />
           <ColorModeSwitcher />
         </Box>
       </Flex>
