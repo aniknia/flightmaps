@@ -28,6 +28,8 @@ export default function CodeInput(psrops) {
                 start: start.toUpperCase(),
                 end: end.toUpperCase()
             };
+            setStartFlag(false);
+            setEndFlag(false);
             setStart('');
             setEnd('');
             value.addRoute(route);
