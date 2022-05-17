@@ -6,12 +6,14 @@ import CodeInput from './CodeInput'
 import FlightList from './FlightList'
 import Credit from './Credit'
 
+// TODO: change button name so the header of the site doesnt have redundant words
+
 export default function ControlPanel() {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const btnRef = useRef()
     return (
         <>
-            <Button leftIcon={<PlusIcon size={16} />} ref={btnRef} colorScheme='teal' onClick={onOpen}>
+            <Button leftIcon={<PlusIcon size={16} />} ref={btnRef} variant='outline' colorScheme='teal' onClick={onOpen}>
                 Flight
             </Button>
             <Drawer isOpen={isOpen} onClose={onClose} finalFocusRef={btnRef} placement='left' size='sm'>
