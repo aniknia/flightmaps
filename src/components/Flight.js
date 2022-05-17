@@ -11,7 +11,7 @@ let size = 16;
 export default function Flight(props) {
     const value = useContext(Routes);
     return (
-        <LinkBox maxW='sm' borderWidth='1px' borderRadius='lg' p={4}>
+        <LinkBox maxW='sm' borderWidth='1px' borderRadius='lg' p={3}>
             <LinkOverlay href="#" onClick={() => value.removeRoute(props.route)}>
                 <VStack align='left'>
                     <HStack>
