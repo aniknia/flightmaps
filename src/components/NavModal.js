@@ -10,7 +10,7 @@ import {
     useDisclosure
   } from '@chakra-ui/react'
 
-  //TODO:remove one of the clse buttons since they are redunant
+  //TODO:remove one of the close buttons since they are redunant
 
 export default function NavModal(props) {
     const { isOpen, onOpen, onClose } = useDisclosure();
