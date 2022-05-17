@@ -1,4 +1,5 @@
-import { Box, Wrap, Text } from "@chakra-ui/layout"
+import { Box, Wrap, Text, HStack } from "@chakra-ui/layout"
+import { TrashIcon } from "@primer/octicons-react"
 import { Routes } from "./RoutesProvider"
 import Flight from './Flight'
 import { useContext } from "react"
@@ -8,7 +9,10 @@ export default function CodeList(props) {
     let flightItems = value.routes.map((route) => <Flight key={route.start + route.end} route={route} />);
     return (
         <Box>
-            <Text mb="2">Click to remove flight.</Text>
+            <HStack>
+                <TrashIcon />
+                <Text mb="2">Click or tap to remove flight.</Text>
+            </HStack>
             <Wrap justify='space-around'>
                 {flightItems}
             </Wrap>
