@@ -13,7 +13,7 @@ export default function CodeList(props) {
                 <TrashIcon />
                 <Text mb="2">Click or tap to remove flight.</Text>
             </HStack>
-            <Wrap justify='space-around'>
+            <Wrap justify='space-around' pt={4}>
                 {flightItems}
             </Wrap>
         </Box>
