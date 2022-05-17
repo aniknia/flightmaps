@@ -24,16 +24,18 @@ export default function CodeInput(psrops) {
     function handleSubmit(event) {
         event.preventDefault();
         if (startFlag === true && endFlag === true) {
-            let route = {
-                start: start.toUpperCase(),
-                end: end.toUpperCase()
-            };
-            setStartFlag(false);
-            setEndFlag(false);
-            setStart('');
-            setEnd('');
-            value.addRoute(route);
-            console.log('your attack was successful!')
+            if (start.length >= 3 && end.length >= 3) {
+                let route = {
+                    start: start.toUpperCase(),
+                    end: end.toUpperCase()
+                };
+                setStartFlag(false);
+                setEndFlag(false);
+                setStart('');
+                setEnd('');
+                value.addRoute(route);
+                console.log('your attack was successful!')
+            }
         }
         else{
             console.log('nothing happened...');
