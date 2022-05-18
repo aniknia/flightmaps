@@ -60,7 +60,7 @@ export default function Map() {
         d3.select('#map')
         .append(() => svg);
 
-    }, [routes, height, width]);
+    }, [routes]);
 
     return (
         <div id="map">
