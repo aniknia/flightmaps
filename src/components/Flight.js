@@ -10,7 +10,6 @@ let size = 16;
 
 export default function Flight(props) {
     const value = useContext(Routes);
-    console.log("fuck")
     return (
         <LinkBox maxW='sm' borderWidth='1px' borderRadius='lg' p={3}>
             <LinkOverlay href="#" onClick={() => value.removeRoute(props.route)}>
