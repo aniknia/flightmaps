@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^1.8.5",
+    "@d3/world-map": "https://api.observablehq.com/@d3/world-map.tgz?v=3",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "@observablehq/runtime": "^4.20.0",
     "@primer/octicons-react": "^16.3.1",
     "@react-icons/all-files": "^4.1.0",
     "@testing-library/jest-dom": "^5.16.2",
