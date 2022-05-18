@@ -2,7 +2,7 @@ import { VStack, HStack, LinkBox, LinkOverlay } from "@chakra-ui/react"
 import { IoEarth } from '@react-icons/all-files/io5/IoEarth'
 import { ArrowRightIcon, ArrowUpRightIcon, ClockIcon } from "@primer/octicons-react"
 import { Routes } from './RoutesProvider'
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 
 let size = 16;
 
