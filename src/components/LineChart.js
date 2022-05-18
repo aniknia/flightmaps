@@ -1,4 +1,6 @@
-import * as d3 from "d3" 
+import * as d3 from "d3"
+
+// TODO: remove image and use an svg for ease of viewing and resizing
 
 // Copyright 2021 Observable, Inc.
 // Released under the ISC license.
@@ -71,6 +73,9 @@ export default function LineChart(data, {
         .attr("height", height)
         .attr("viewBox", [0, 0, width, height])
         .attr("style", "max-width: 100%; height: auto; height: intrinsic;")
+        .style("background-image", "url(" + process.env.REACT_APP_API_HOST + "/static/kavraiskiy_vii_dark.jpg)")
+        .style("background-size", "contain")
+        .style("background-repeat", "no-repeat")
         .style("-webkit-tap-highlight-color", "transparent")
         .on("pointerenter", pointerentered)
         .on("pointermove", pointermoved)
@@ -85,7 +90,9 @@ export default function LineChart(data, {
           .from(I, i => xScale(X[i]), i => yScale(Y[i]))
           .voronoi([0, 0, width, height])
           .render());
-  
+    
+    // This is the axis
+    /*
     svg.append("g")
         .attr("transform", `translate(0,${height - marginBottom})`)
         .call(xAxis);
@@ -103,6 +110,7 @@ export default function LineChart(data, {
             .attr("fill", "currentColor")
             .attr("text-anchor", "start")
             .text(yLabel));
+    */
   
     const path = svg.append("g")
         .attr("fill", "none")
