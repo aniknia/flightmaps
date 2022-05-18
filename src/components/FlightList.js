@@ -2,11 +2,16 @@ import { Box, Wrap, Text, HStack } from "@chakra-ui/layout"
 import { TrashIcon } from "@primer/octicons-react"
 import { Routes } from "./RoutesProvider"
 import Flight from './Flight'
-import { useContext } from "react"
+import { useContext, useState, useEffect } from "react"
 
 export default function CodeList(props) {
     const value = useContext(Routes)
-    let flightItems = value.routes.map((route) => <Flight key={route.start + route.end} route={route} />);
+    const [flightItems, setFlightItems] = useState();
+
+    useEffect(() => {
+        setFlightItems(value.routes.map((route) => <Flight key={route.start + route.end} route={route} />))
+    }, [value.routes])
+
     return (
         <Box>
             <HStack>
