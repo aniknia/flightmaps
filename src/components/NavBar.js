@@ -18,7 +18,7 @@ export default function NavBar() {
         </Box>
         <Spacer />
         <Box>
-          <NavModal button={<QuestionIcon size={24} />} title="Info" body= "This app allows you to map out flights between airports." />
+          <NavModal button={<QuestionIcon size={24} />} title="Info" body= "This app allows you to map out flights between airports. The time and corbon foot print for each flight are estimated using a Boeing 747." />
           <ColorModeSwitcher />
         </Box>
       </Flex>
