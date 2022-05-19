@@ -1,6 +1,5 @@
-import React, { useContext, useState, useEffect, useRef } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import * as d3 from "d3";
-import useWindowDimensions from './useWindowDimension';
 import { Routes } from './RoutesProvider';
 import LineChart from './LineChart';
 
@@ -63,16 +62,16 @@ function cleanData(routes) {
 }
 
 export default function Map() {
-    const routes = useContext(Routes);
-    const [ data, setData ] = useState(cleanData(routes))
-    const { height, width } = useWindowDimensions();
+    const value = useContext(Routes);
+    const [ data, setData ] = useState(cleanData(value))
+    const graph = {}
     
     const [svg, setSvg] = useState(
         makeChart(data)
     );
 
     useEffect(() => {
-        setData(cleanData(routes));
+        setData(cleanData(value));
 
         d3.select('#map')
         .selectAll("*")
@@ -84,7 +83,7 @@ export default function Map() {
 
         d3.select('#map')
         .append(() => svg);
-    }, []);
+    }, [value]);
 
     return (
         <div id="map">
