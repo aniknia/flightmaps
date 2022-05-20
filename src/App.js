@@ -9,7 +9,7 @@ import Main from './components/Main'
 
 function App() {
   useEffect(() => {
-     document.title = "The Flight Mapper";  
+     document.title = "Flight Maps";  
    }, []);
   return (
     <ChakraProvider theme={theme}>
