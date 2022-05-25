@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react"
+import { useContext } from "react"
 import useWindowDimensions from "./useWindowDimension"
 import { Flex } from "@chakra-ui/react"
 import Map from "./Map"
