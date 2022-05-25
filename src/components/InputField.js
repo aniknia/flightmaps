@@ -6,7 +6,7 @@ export default function InputField(props) {
 
     useEffect(() => {
         if(props.value.length >= 3) {
-            fetch(process.env.REACT_APP_API_HOST + "/v1/check-code/" + props.value)
+            fetch(process.env.REACT_APP_API_HOST + "/check-code/" + props.value)
             .then(response => response.json())
             .then(data => {
                 if (data["default"] === true) {

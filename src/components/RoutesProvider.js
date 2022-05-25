@@ -20,7 +20,7 @@ export default function RoutesProvider(props) {
         })
         if (existsFlag === false) {
             if (error === false) {
-                fetch(process.env.REACT_APP_API_HOST + "/v1/get-route/" + route.start + "/" + route.end)
+                fetch(process.env.REACT_APP_API_HOST + "/get-route/" + route.start + "/" + route.end)
                 .then(response => response.json())
                 .then(data => {
                     if (data["error"] === true) {
