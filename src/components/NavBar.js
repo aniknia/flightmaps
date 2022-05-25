@@ -8,7 +8,7 @@ import NavModal from "./NavModal"
 export default function NavBar() {
   return (
     <Stack>
-      <Flex alignItems='center' gap='2' p='2'>
+      <Flex alignItems='center' gap='2' pt='2' pd='0' pl='2' pr='2' >
         <Box>
           <ControlPanel />
         </Box>
@@ -22,7 +22,7 @@ export default function NavBar() {
           <ColorModeSwitcher />
         </Box>
       </Flex>
-      <Divider />
+      <Divider p='0' />
     </Stack>
   )
 }
