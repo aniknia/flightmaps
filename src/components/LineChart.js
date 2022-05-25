@@ -29,6 +29,7 @@ export default function LineChart(data, {
     zDomain, // array of z-values
     color = "currentColor", // stroke color of line, as a constant or a function of *z*
     font_color = "white",
+    image = "kavraiskiy_vii_dark.jpg",
     strokeLinecap, // stroke line cap of line
     strokeLinejoin, // stroke line join of line
     strokeWidth = 1.5, // stroke width of line
@@ -36,6 +37,7 @@ export default function LineChart(data, {
     mixBlendMode = "multiply", // blend mode of lines
     voronoi // show a Voronoi overlay? (for debugging)
   } = {}) {
+
     // Compute values.
     const X = d3.map(data, x);
     const Y = d3.map(data, y);
@@ -74,7 +76,7 @@ export default function LineChart(data, {
         .attr("height", height)
         .attr("viewBox", [0, 0, width, height])
         .attr("style", "max-width: 100%; height: auto; height: intrinsic;")
-        .style("background-image", "url(" + process.env.REACT_APP_API_HOST + "/static/kavraiskiy_vii_dark.jpg)")
+        .style("background-image", "url(" + process.env.REACT_APP_API_HOST + "/static/" + image + ")")
         .style("background-size", "contain")
         .style("background-repeat", "no-repeat")
         .style("background-position", "center")
