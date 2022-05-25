@@ -2,10 +2,11 @@ import * as d3 from "d3";
 import LineChart from './LineChart';
 import { Box } from '@chakra-ui/react'
 import { useEffect } from "react";
+import { image } from "d3";
 
 // TODO: put map svg behind a viewer for scaling and viewing on small devices
 
-function makeChart(data, height, width) {
+function makeChart(data, height, width, font_color, image) {
     return LineChart(data, {
         x: d => d.x,
         y: d => d.y,
@@ -21,6 +22,8 @@ function makeChart(data, height, width) {
         marginLeft: 0,
         viewbox: '100',
         color: "red",
+        font_color: font_color,
+        image: image,
         strokeWidth: 3
     })
 }
@@ -64,7 +67,7 @@ export default function Map(props) {
     useEffect(() => {
         d3.select('#map').selectAll("*").remove()
         let data = cleanData(props.value)
-        let svg = makeChart(data, props.height, props.width)
+        let svg = makeChart(data, props.height, props.width, props.color, props.image)
         d3.select('#map').append(() => svg)
     })
 
