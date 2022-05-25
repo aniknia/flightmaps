@@ -1,6 +1,6 @@
 import { Stack, Flex, Box, Spacer, Divider } from "@chakra-ui/react"
 import { QuestionIcon } from "@primer/octicons-react"
-import { ColorModeSwitcher } from '../ColorModeSwitcher'
+import { ColorModeSwitcher } from './ColorModeSwitcher'
 import ControlPanel from "./ControlPanel"
 import Logo from "./Logo"
 import NavModal from "./NavModal"
