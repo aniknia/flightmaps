@@ -2,7 +2,6 @@ import * as d3 from "d3";
 import LineChart from './LineChart';
 import { Box } from '@chakra-ui/react'
 import { useEffect } from "react";
-import { image } from "d3";
 
 // TODO: put map svg behind a viewer for scaling and viewing on small devices
 

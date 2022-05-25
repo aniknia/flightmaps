@@ -58,8 +58,8 @@ export default function LineChart(data, {
     // Construct scales and axes.
     const xScale = xType(xDomain, xRange);
     const yScale = yType(yDomain, yRange);
-    const xAxis = d3.axisBottom(xScale).ticks(width / 80).tickSizeOuter(0);
-    const yAxis = d3.axisLeft(yScale).ticks(height / 60, yFormat);
+    //const xAxis = d3.axisBottom(xScale).ticks(width / 80).tickSizeOuter(0);
+    //const yAxis = d3.axisLeft(yScale).ticks(height / 60, yFormat);
   
     // Compute titles.
     const T = title === undefined ? Z : title === null ? null : d3.map(data, title);
