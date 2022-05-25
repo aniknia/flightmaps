@@ -14,7 +14,7 @@ export default function Window() {
     const final_width = final_height * (1.73)
 
     return (
-        <Flex width={width} height={final_height} justifyContent='center'>
+        <Flex width={width} height={final_height} align="center" justifyContent='center'>
             <Map value={value} width={final_width} height={final_height} color={color} image={image} />
         </Flex>
     )
