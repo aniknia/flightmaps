@@ -28,6 +28,7 @@ export default function LineChart(data, {
     yLabel, // a label for the y-axis
     zDomain, // array of z-values
     color = "currentColor", // stroke color of line, as a constant or a function of *z*
+    font_color = "white",
     strokeLinecap, // stroke line cap of line
     strokeLinejoin, // stroke line join of line
     strokeWidth = 1.5, // stroke width of line
@@ -137,7 +138,7 @@ export default function LineChart(data, {
         .attr("font-family", "sans-serif")
         .attr("font-size", 15)
         .attr("font-weight", "bold")
-        .attr("fill", "white")
+        .attr("fill", font_color)
         .attr("text-anchor", "middle")
         .attr("y", -8);
   
