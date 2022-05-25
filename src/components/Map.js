@@ -1,7 +1,7 @@
-import React, { useContext, useState, useEffect } from 'react';
 import * as d3 from "d3";
-import { Routes } from './RoutesProvider';
 import LineChart from './LineChart';
+import { Box } from '@chakra-ui/react'
+import { useEffect } from "react";
 
 // TODO: put map svg behind a viewer for scaling and viewing on small devices
 
@@ -11,16 +11,14 @@ function makeChart(data, height, width) {
         y: d => d.y,
         z: d => d.route,
         defined: undefined,
-        //xDomain: [0, 1920],
-        yDomain: [1080, 0],
-        height: 1080,
-        width: 1920,
-        //height: String({height}['height'] - 65),
-        //width: String({width}['width']),
-        marginTop: -25,
-        marginRight: 160,
-        marginBottom: 30,
-        marginLeft: 110,
+        xDomain: [0, 2048],
+        yDomain: [1182, 0],
+        height: String(height),
+        width: String(width),
+        marginTop: 0,
+        marginRight: 0,
+        marginBottom: 0,
+        marginLeft: 0,
         viewbox: '100',
         color: "red",
         strokeWidth: 3
@@ -28,13 +26,13 @@ function makeChart(data, height, width) {
 }
 
 function cleanData(routes) {
-    let data = new Array(routes['routes'].length * 1000);
-    let x = 0
-    let y = 0
-    let temp = 0
     if (routes.length === 0) {
-        return data
+        return [{route: "", x: 0, y: 0}]
     } else {
+        let data = new Array(routes['routes'].length * 1000);
+        let x = 0
+        let y = 0
+        let temp = 0
         let i = 0;
         routes['routes'].forEach(item => {
             for (let j = 0; j < 1000; j++) {
@@ -61,32 +59,17 @@ function cleanData(routes) {
     }
 }
 
-export default function Map() {
-    const value = useContext(Routes);
-    const [ data, setData ] = useState(cleanData(value))
-    const graph = {}
-    
-    const [svg, setSvg] = useState(
-        makeChart(data)
-    );
+export default function Map(props) {
 
     useEffect(() => {
-        setData(cleanData(value));
-
-        d3.select('#map')
-        .selectAll("*")
-        .remove();
-
-        setSvg(
-            makeChart(data)
-        );
-
-        d3.select('#map')
-        .append(() => svg);
-    }, [value]);
+        d3.select('#map').selectAll("*").remove()
+        let data = cleanData(props.value)
+        let svg = makeChart(data, props.height, props.width)
+        d3.select('#map').append(() => svg)
+    })
 
     return (
-        <div id="map">
-        </div>
+        <Box id="map">
+        </Box>
     )
 }

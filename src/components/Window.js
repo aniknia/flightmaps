@@ -1,21 +1,19 @@
-import { useEffect, useRef, useContext } from "react"
+import { useEffect, useContext } from "react"
 import useWindowDimensions from "./useWindowDimension"
-import { Box } from "@chakra-ui/react"
+import { Flex } from "@chakra-ui/react"
 import Map from "./Map"
 import { Routes } from "./RoutesProvider"
 
 export default function Window() {
     const value = useContext(Routes)
     const { height, width } = useWindowDimensions()
-    let map = <Map />
 
-    useEffect(() => {
-        map = <Map />
-    })
+    const final_height = height - 57
+    const final_width = final_height * (1.73)
 
     return (
-        <Box width={width} height={{height}['height'] - 65}>
-            {map}
-        </Box>
+        <Flex width={width} height={final_height} justifyContent='center'>
+            <Map value={value} width={final_width} height={final_height} />
+        </Flex>
     )
 }
