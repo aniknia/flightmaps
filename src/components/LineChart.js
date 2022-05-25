@@ -135,7 +135,9 @@ export default function LineChart(data, {
   
     dot.append("text")
         .attr("font-family", "sans-serif")
-        .attr("font-size", 10)
+        .attr("font-size", 15)
+        .attr("font-weight", "bold")
+        .attr("fill", "white")
         .attr("text-anchor", "middle")
         .attr("y", -8);
   
