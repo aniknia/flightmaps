@@ -76,6 +76,7 @@ export default function LineChart(data, {
         .style("background-image", "url(" + process.env.REACT_APP_API_HOST + "/static/kavraiskiy_vii_dark.jpg)")
         .style("background-size", "contain")
         .style("background-repeat", "no-repeat")
+        .style("background-position", "center")
         .style("-webkit-tap-highlight-color", "transparent")
         .on("pointerenter", pointerentered)
         .on("pointermove", pointermoved)
