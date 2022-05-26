@@ -1,7 +1,7 @@
 {
   "short_name": "Flight Maps",
   "name": "Flight Maps",
-  "description": "An app to visualize your flights",
+  "description": "An app for visualizing your flights",
   "icons": [
     {
       "src": "favicon.ico",
