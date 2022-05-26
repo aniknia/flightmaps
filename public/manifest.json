@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Flight Maps",
+  "name": "Flight Maps",
+  "description": "An app to visualize your flights",
   "icons": [
     {
       "src": "favicon.ico",
