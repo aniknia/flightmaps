@@ -6,8 +6,8 @@ import { Routes } from "./RoutesProvider"
 
 export default function Window() {
     const value = useContext(Routes)
-    const color = useColorModeValue('black', 'white')
-    const image = useColorModeValue("kavraiskiy_vii_light.jpg", "kavraiskiy_vii_dark.jpg")
+    const color = useColorModeValue('blue', 'orange')
+    const image = useColorModeValue("map_light.svg", "map_dark.svg")
     const { height, width } = useWindowDimensions()
 
     const final_height = height - 57
