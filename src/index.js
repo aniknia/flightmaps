@@ -4,9 +4,11 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
+import Meta from './components/meta';
 
 ReactDOM.render(
   <StrictMode>
+    <Meta />
     <ColorModeScript />
     <App />
   </StrictMode>,
