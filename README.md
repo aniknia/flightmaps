@@ -10,10 +10,12 @@ FlightMaps is a React-based web application that displays your flight paths on a
 - **Flight Data Estimates:** Get estimates of flight duration, distance covered, and CO₂ emissions.
 - **User-Friendly Input:** Enter origin and destination airports with a clean, intuitive form.
 
----
+<img src="public/map_dark.png" height="500px">
 
 ## Technologies Used
 
 - **React.js:** For building a modern, component-driven user interface.
 - **ChakraUI:** Utilized ChakraUI for the modular and stylized components.
 - **FastAPI:** Developed a backend with FastAPI to calculate and return coordinates for accurate trajectories
+
+<img src="public/menu_light.png" height="500px">
