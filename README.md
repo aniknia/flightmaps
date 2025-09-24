@@ -2,6 +2,8 @@
 
 FlightMaps is a React-based web application that displays your flight paths on an interactive map. Simply enter the airports you've flown from and to, and the app will render the trajectory along with estimates for flight time, distance, and CO₂ emissions. The flight trajectories are computed using great circle calculations and are rendered on a Kravraiskiy VII map projection for precise and visually engaging representations.
 
+2025-09-24: FlightMaps has been moved to NextJS
+
 ---
 
 ## Features
