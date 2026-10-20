@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import useWindowDimensions from './useWindowDimension';
-import { Flex, useColorModeValue } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
+import { useColorModeValue } from './ColorMode';
 import Map from './Map';
 import { Routes } from './RoutesProvider';
 

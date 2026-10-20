@@ -1,5 +1,6 @@
 import React from 'react';
-import { useColorMode, useColorModeValue, IconButton } from '@chakra-ui/react';
+import { IconButton } from '@chakra-ui/react';
+import { useColorMode, useColorModeValue } from './ColorMode';
 import { MoonIcon, SunIcon } from '@primer/octicons-react';
 
 export const ColorModeSwitcher = props => {
@@ -16,8 +17,9 @@ export const ColorModeSwitcher = props => {
       color="current"
       marginLeft="2"
       onClick={toggleColorMode}
-      icon={<SwitchIcon />}
       {...props}
-    />
+    >
+      <SwitchIcon />
+    </IconButton>
   );
 };

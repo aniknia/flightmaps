@@ -1,4 +1,4 @@
-import { Stack, Flex, Box, Spacer, Divider } from "@chakra-ui/react"
+import { Stack, Flex, Box, Spacer, Separator } from "@chakra-ui/react"
 import { QuestionIcon } from "@primer/octicons-react"
 import { ColorModeSwitcher } from './ColorModeSwitcher'
 import ControlPanel from "./ControlPanel"
@@ -22,7 +22,7 @@ export default function NavBar() {
           <ColorModeSwitcher />
         </Box>
       </Flex>
-      <Divider p='0' />
+      <Separator p='0' />
     </Stack>
   )
 }

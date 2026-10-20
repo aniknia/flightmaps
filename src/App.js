@@ -1,8 +1,9 @@
 import React, { useEffect} from "react";
 import {
   ChakraProvider,
-  theme
+  defaultSystem
 } from '@chakra-ui/react';
+import { ColorModeProvider } from './components/ColorMode'
 import Main from './components/Main'
 
 
@@ -12,8 +13,10 @@ function App() {
      document.title = "Flight Maps";  
    }, []);
   return (
-    <ChakraProvider theme={theme}>
-      <Main />
+    <ChakraProvider value={defaultSystem}>
+      <ColorModeProvider>
+        <Main />
+      </ColorModeProvider>
     </ChakraProvider>
   );
 }
