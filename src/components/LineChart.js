@@ -76,7 +76,7 @@ export default function LineChart(data, {
         .attr("height", height)
         .attr("viewBox", [0, 0, width, height])
         .attr("style", "max-width: 100%; height: auto; height: intrinsic;")
-        .style("background-image", "url(" + process.env.REACT_APP_API_HOST + "/static/" + image + ")")
+        .style("background-image", "url(" + image + ")")
         .style("background-size", "contain")
         .style("background-repeat", "no-repeat")
         .style("background-position", "center")
