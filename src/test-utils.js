@@ -1,10 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { ChakraProvider, defaultSystem } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
+import { system } from './theme';
 import { ColorModeProvider } from './components/ColorMode';
 
 const AllProviders = ({ children }) => (
-  <ChakraProvider value={defaultSystem}>
+  <ChakraProvider value={system}>
     <ColorModeProvider>{children}</ColorModeProvider>
   </ChakraProvider>
 );

@@ -6,7 +6,7 @@ export default function ControlPanelHead(props) {
         <Flex>
             <Logo />
             <Spacer />
-            <CloseButton size='md' onClick={props.close} />
+            <CloseButton size='xs' _icon={{ boxSize: '6' }} onClick={props.close} />
         </Flex>
     )
 }

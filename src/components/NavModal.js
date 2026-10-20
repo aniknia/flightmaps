@@ -23,7 +23,7 @@ export default function NavModal(props) {
                 <Dialog.Title>{ props.title }</Dialog.Title>
                 </Dialog.Header>
                 <Dialog.CloseTrigger asChild>
-                <CloseButton size='sm' />
+                <CloseButton size='xs' _icon={{ boxSize: '6' }} />
                 </Dialog.CloseTrigger>
                 <Dialog.Body>
                 { props.body }
