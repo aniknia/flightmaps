@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react'
+import { getRoute } from './flightmapper'
 
 export const Routes = createContext({
     routes: [],
@@ -20,8 +21,7 @@ export default function RoutesProvider(props) {
         })
         if (existsFlag === false) {
             if (error === false) {
-                fetch(process.env.REACT_APP_API_HOST + "/get-route/" + route.start + "/" + route.end)
-                .then(response => response.json())
+                getRoute(route.start, route.end)
                 .then(data => {
                     if (data["error"] === true) {
                         setError(true);

@@ -1,13 +1,13 @@
 import { PinInput } from "@chakra-ui/react"
 import { useState, useEffect } from 'react'
+import { checkCode } from './flightmapper'
 
 export default function InputField(props) {
     const [error, setError] = useState(false);
 
     useEffect(() => {
         if(props.value.length >= 3) {
-            fetch(process.env.REACT_APP_API_HOST + "/check-code/" + props.value)
-            .then(response => response.json())
+            checkCode(props.value)
             .then(data => {
                 if (data["default"] === true) {
                     props.flag(false);
