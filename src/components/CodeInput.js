@@ -53,7 +53,8 @@ export default function CodeInput(psrops) {
                     <InputField value={end} set={setEnd} flag={setEndFlag} />              
                 </HStack>
                 <Center>
-                    <Button leftIcon={<PlusIcon size={16} />} variant='outline' onClick={handleSubmit}>
+                    <Button variant='outline' onClick={handleSubmit}>
+                        <PlusIcon size={16} />
                         Flight
                     </Button>
                 </Center>

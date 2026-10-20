@@ -1,4 +1,4 @@
-import { Box, VStack } from "@chakra-ui/layout";
+import { Box, VStack } from "@chakra-ui/react";
 
 // TODO: Maybe change this to Thanks instead of Credit
 

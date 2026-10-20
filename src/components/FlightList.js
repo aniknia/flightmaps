@@ -1,4 +1,4 @@
-import { Box, Wrap, Text, HStack } from "@chakra-ui/layout"
+import { Box, Wrap, Text, HStack } from "@chakra-ui/react"
 import { TrashIcon } from "@primer/octicons-react"
 import { Routes } from "./RoutesProvider"
 import Flight from './Flight'

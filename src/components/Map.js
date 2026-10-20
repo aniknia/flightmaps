@@ -28,37 +28,33 @@ function makeChart(data, height, width, font_color, image) {
 }
 
 function cleanData(routes) {
-    if (routes.length === 0) {
-        return [{route: "", x: 0, y: 0}]
-    } else {
-        let data = new Array(routes['routes'].length * 1000);
-        let x = 0
-        let y = 0
-        let temp = 0
-        let i = 0;
-        routes['routes'].forEach(item => {
-            for (let j = 0; j < 1000; j++) {
-                let route = String(item['start'] + " to " + item['end']);
+    let data = new Array(routes['routes'].length * 1000);
+    let x = 0
+    let y = 0
+    let temp = 0
+    let i = 0;
+    routes['routes'].forEach(item => {
+        for (let j = 0; j < 1000; j++) {
+            let route = String(item['start'] + " to " + item['end']);
 
-                if (j === 0) {
-                    x = item['x'][j];
-                    y = item['y'][j];
-                } else if (Math.abs(temp - item['x'][j]) > 2) {
-                    x = item['x'][j];
-                    y = NaN;
-                    console.log("We got null")
-                } else {
-                    x = item['x'][j];
-                    y = item['y'][j];
-                }
-                
-                temp = item['x'][j]
-                data[(i * 1000) + j] = {route: route, x: x, y: y};
+            if (j === 0) {
+                x = item['x'][j];
+                y = item['y'][j];
+            } else if (Math.abs(temp - item['x'][j]) > 2) {
+                x = item['x'][j];
+                y = NaN;
+                console.log("We got null")
+            } else {
+                x = item['x'][j];
+                y = item['y'][j];
             }
-            i++;
-        })
-        return data
-    }
+
+            temp = item['x'][j]
+            data[(i * 1000) + j] = {route: route, x: x, y: y};
+        }
+        i++;
+    })
+    return data
 }
 
 export default function Map(props) {

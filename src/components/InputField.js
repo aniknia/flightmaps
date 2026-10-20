@@ -1,13 +1,13 @@
-import { PinInputField, PinInput } from "@chakra-ui/pin-input"
+import { PinInput } from "@chakra-ui/react"
 import { useState, useEffect } from 'react'
+import { checkCode } from './flightmapper'
 
 export default function InputField(props) {
     const [error, setError] = useState(false);
 
     useEffect(() => {
         if(props.value.length >= 3) {
-            fetch(process.env.REACT_APP_API_HOST + "/check-code/" + props.value)
-            .then(response => response.json())
+            checkCode(props.value)
             .then(data => {
                 if (data["default"] === true) {
                     props.flag(false);
@@ -29,11 +29,14 @@ export default function InputField(props) {
     );
 
     return (
-        <PinInput type='alphanumeric' isInvalid={error} value={props.value} onChange={props.set}>
-            <PinInputField />
-            <PinInputField />
-            <PinInputField />
-            <PinInputField />
-        </PinInput>
+        <PinInput.Root type='alphanumeric' invalid={error} value={Array.from({ length: 4 }, (_, i) => props.value[i] || '')} onValueChange={e => props.set(e.valueAsString)}>
+            <PinInput.HiddenInput />
+            <PinInput.Control>
+                <PinInput.Input index={0} />
+                <PinInput.Input index={1} />
+                <PinInput.Input index={2} />
+                <PinInput.Input index={3} />
+            </PinInput.Control>
+        </PinInput.Root>
     )
 }
